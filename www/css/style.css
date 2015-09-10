@@ -1,0 +1,183 @@
+/* Empty. Add your own CSS if you like */
+
+.spinner svg {
+  width: 95% !important;
+  height: 400px !important;
+}
+
+td-cards {
+  display: block;
+  height: 350px;
+}
+
+td-card {
+  position: absolute;
+  left: 50%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: -150px;
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid #999;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 6px;
+}
+
+td-card .image {
+  position: relative;
+}
+
+td-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.yes-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: rgb(111, 250, 111);
+  opacity: 0;
+}
+.no-text {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: rgb(255, 115, 115);
+  opacity: 0;
+}
+
+.fade {
+  -webkit-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  opacity: 0;
+}
+
+.user-detail {
+  position: absolute;
+  border-radius: 5px;
+  padding: 4px;
+  bottom: 10px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255,255,255,0.8);
+}
+
+#welcome-view {
+    background: url(../img/welcome_bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+ 
+.logo-welcome {
+    width: 120px;
+    height: 120px;
+    margin: 100px auto 60px auto;
+    background: url(../img/logo.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+ 
+.login-btns {
+    width: 250px;
+    margin: 0 auto 0 auto;
+}
+ 
+#btn-reg {
+    float: right;
+}
+ 
+#login-divider {
+    margin: 40px 0 10px 0;
+}
+ 
+#footer {
+    background: #5A5A5A;
+    opacity: 0.4;
+    color: #fff;
+}
+ 
+.uppercase {
+    text-transform: uppercase;
+}
+ 
+#btn-reg, #btn-login {
+    color: white;
+}
+ 
+.em-small {
+    font-size: 16px;
+    text-decoration: none;
+}
+ 
+.bar .title {
+    font-weight: bold;
+    text-align: center !important;
+ 
+}
+ 
+.em-padding-header {
+    padding: 2px;
+}
+ 
+.profile-container {
+    position: relative;
+    padding: 35px;
+    background-color:lightblue;
+}
+ 
+.profile-background {
+    position:absolute;
+    top:-20%;
+    left:-20%;
+    width:140%;
+    height:140%;
+    z-index:1;
+    background-size: cover;
+    -webkit-filter: blur(30px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+    opacity: 0.65;
+}
+ 
+.profile-pic {
+    position:relative;
+    z-index:5;
+    text-align: center;
+    height: 95px;
+    width: 95px;
+    background-size: cover;
+    display: block;
+    margin: 0 auto 0 auto;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+}
+ 
+.em-gender .item-checkbox {
+    padding-left: 50px !important;
+    font-size: 14px;
+    border-width: 0;
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+}
+ 
+.platform-android ion-popover-view.fit {
+    margin-top: 10px !important;
+}

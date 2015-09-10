@@ -1,0 +1,48 @@
+<ion-view class="prospects" view-title="Discover" ng-init="init()">
+  <ion-content class="padding" delegate-handle="prospectScroll">
+  <!--<ion-refresher on-refresh="doRefresh()">
+                     
+      </ion-refresher>-->
+  <!--  <ion-list can-swipe="listCanSwipe">
+      <ion-item class="item-remove-animate" ng-repeat="prospect in prospects" type="item-text-wrap">
+      
+        <img ng-src="{{prospect.thumbnail}}">
+        <h2>{{prospect.first_name}} {{prospect.age}}</h2>
+
+        <ion-button class="button-assertive" ng-click="remove(prospect)">
+          Remove
+        </ion-option-button>
+      </ion-item>
+    </ion-list>-->
+     <td-cards delegate-handle="friends">
+       <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft(card)" on-swipe-right="cardSwipedRight(card)" on-transition-left="transitionLeft()" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+         <div class="image" ng-controller="CardCtrl">
+           <div class="no-text">NOPE</div>
+           <img ng-src="{{card.thumbnail}}">
+           <!-- <h3>{{card.email}}</h3> -->
+           <div class="yes-text">LIKE</div>
+           <div class="user-detail">{{card.first_name}}, {{card.age}}</div>
+         </div>
+       </td-card>
+     </td-cards>
+     <md-content>
+     <!--<div ng-repeat="card in cards">
+     	Card {{card.email}}
+     </div>-->
+     <div layout="row" layout-sm="column" layout-align="center center">
+     	<div>
+	        <md-button class="md-fab  md-primary" ng-disabled="cards.length < 1" aria-label="Not Like" ng-click="notLike()">
+	        	<md-icon md-svg-src="img/heart-broken.svg"></md-icon>
+	        </md-button>
+	        <md-button class="md-fab" ng-disabled="cards.length < 1" aria-label="Like" ng-click="like()">
+	          <md-icon md-svg-src="img/heart.svg"></md-icon>
+	        </md-button>
+	     </div>
+     </div>
+     </md-content>
+     <!--<div class="row">
+		  <div class="col col-33 col-offset-25"><button class="button button-stable">test</button></div>
+		  <div class="col col-33"><button class="button button-stable">test2</button></div>
+	</div>-->
+  </ion-content>
+</ion-view>

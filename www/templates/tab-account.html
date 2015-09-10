@@ -1,0 +1,63 @@
+<!-- <ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+    </ion-list>'min_age', 'max_age', 'gender_pref', 'distance', 'hidden'
+  </ion-content>
+</ion-view>-->
+<ion-view view-title="Preferences" ng-init="init()">
+    <ion-header-bar class="bar-header bar-positive">
+        <div class="title uppercase">Welcome</div>
+        <button class="button button-clear" ng-click="logout()">Logout</button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+        
+            <div class="profile-container">
+                <!--<div id="em-profile" class="item">-->
+                    <!-- <img src="img/ionic.png"> -->
+                    <div ng-if="preference.user.profile_image" class="profile-pic" ng-style="{'background-image': 'url(' + preference.user.profile_image + ')'}"></div>
+                    <!--  <div ng-if="!preference.user.profile_image" class="profile-pic" style="background-image: url(img/profile-pic-default.png)"></div>-->
+                <!--</div>-->
+                <div id="myDiv">
+                    <div id="color">
+                        <div id="effect"></div>
+                    </div>
+                </div>
+                <div class="profile-background" ng-style="{'background-image': 'url(' + preference.user.profile_image + ')'}"></div>
+            </div>
+            <div class="list">
+                <label class="item item-input field-disabled">
+                    <span class="input-label">Minimum Age</span>
+                    <input ng-model="preference.min_age" type="text" placeholder="20">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Maximum Age</span>
+                    <input ng-model="preference.max_age" type="text" placeholder="50">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Distance</span>
+                    <input ng-model="preference.distance" type="text" placeholder="30">
+                </label>
+                <!-- <label class="item item-input">
+                    <span class="input-label">Phone</span>
+                    <input ng-model="user.phone" type="text" placeholder="+91 8123595959">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Birthday</span>
+                    <input ng-model="user.dobObj" type="date" placeholder="">
+                </label>-->
+                <label class="item item-input em-gender">
+                    <span class="input-label">Gender</span>
+                    <ion-checkbox class="em-gender-cb" ng-model="isMale" ng-change="isMale ? preference.gender_pref='m' : preference.gender_pref = 'f';
+                        isFemale = false" ng-checked="preference.gender_pref === 'm'">Male</ion-checkbox>
+                    <ion-checkbox class="em-gender-cb" ng-model="isFemale" ng-change="isFemale ? preference.gender_pref='f' : preference.gender_pref = 'm';
+                        isMale = false" ng-checked="preference.gender_pref === 'f'">Female</ion-checkbox>
+                </label>
+ 
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

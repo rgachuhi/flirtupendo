@@ -1,0 +1,17 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="stream in streams" type="item-text-wrap" href="#/tab/chats/{{stream.id}}">
+        
+        <img ng-src="{{stream.tag1?stream.user2.tiny_image:stream.user1.tiny_image}}">
+        <h2>{{chat.tag1?chat.user2.first_name:chat.user1.first_name}}</h2>
+        <p>{{chat.last}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

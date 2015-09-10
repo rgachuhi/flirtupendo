@@ -1,0 +1,21 @@
+<ion-view view-title="Matches" ng-init="init()">
+  <ion-content>
+  	<div class="card item" ng-repeat="match in matches">
+        <img ng-src="{{match.tag?match.target.tiny_image:match.source.tiny_image}}">
+        <md-button class="md-fab  md-primary" ng-disabled="false" aria-label="Start Chat" ng-click="startChat(match)">
+	        <md-icon md-svg-src="img/chat.svg"></md-icon>
+	    </md-button>
+        <!-- <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>-->
+  	</div>
+	<!--<ion-list>
+      <ion-item class="card item-remove-animate item-avatar item-icon-right" ng-repeat="match in matches" type="item-text-wrap">
+        <img ng-src="http://localhost:8000{{match.users[1].tiny_image}}">
+        <!-- <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p
+       
+      </ion-item>
+    </ion-list>-->
+  </ion-content>
+</ion-view>
+

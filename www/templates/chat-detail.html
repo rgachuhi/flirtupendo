@@ -1,0 +1,51 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding">
+    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    <p>
+      {{chat.lastText}}
+    </p>
+  </ion-content>
+</ion-view>-->
+
+<ion-view view-title="Chat">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-positive button-clear icon ion-gear-a" ng-click="modal.show()"></button>
+  </ion-nav-buttons>
+
+  <ion-content delegate-handle="chat" id="chat-list" on-hold="showTime = !showTime" class="content-stable mh-padding">
+
+    <div ng-repeat="chat in chats" ng-class="{other:chat.user !== handle}" class="messages">
+
+      <div class="message slide-right" ng-class="{'slide-right': !showTime, '': showTime}">
+      	<img ng-if="chat.sender" ng-src="{{chat.sender.tiny_image}}"  />
+        <span ng-if="chat.message">{{chat.message}}</span>
+      </div>
+
+      <div class="time slide-right" ng-class="{'slide-right': !showTime, '': showTime}">
+        {{chat.timestamp | date:"h:mma"}}
+      </div>
+    </div>
+
+  </ion-content>
+
+  <form id="footer-input" ng-submit="add(message)">
+    <ion-footer-bar keyboard-attach class="item-input-inset">
+
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input ng-focus="inputUp()" ng-blur="inputDown()" type="text" placeholder="Message"
+        ng-model="message">
+      </label>
+      <!--<a class="button button-clear" ng-click="takePicture()">
+        <i class="icon ion-camera"></i>
+      </a>-->
+    </ion-footer-bar>
+  </form>
+
+</ion-view>
